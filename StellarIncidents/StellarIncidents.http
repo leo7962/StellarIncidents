@@ -1,0 +1,6 @@
+@StellarIncidents_HostAddress = http://localhost:5109
+
+GET {{StellarIncidents_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
