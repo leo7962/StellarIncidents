@@ -47,23 +47,23 @@ public class IncidentRepository : IIncidentRepository
     public async Task<Incident?> GetByIdAsync(Guid id, CancellationToken ct = default)
     {
         return await _db.Incidents
-        .Include(i => i.Category)
-        .Include(i => i.ReporterUser)
-        .Include(i => i.Comments)
+            .Include(i => i.Category)
+            .Include(i => i.ReporterUser)
+            .Include(i => i.Comments)
             .ThenInclude(c => c.AuthorUser)
-        .AsNoTracking()
-        .FirstOrDefaultAsync(i => i.Id == id);
+            .AsNoTracking()
+            .FirstOrDefaultAsync(i => i.Id == id);
     }
 
     public async Task<List<Incident>> ListAsync(CancellationToken ct = default)
     {
         return await _db.Incidents
-        .Include(i => i.Category)
-        .Include(i => i.ReporterUser)
-        .Include(i => i.Comments)
+            .Include(i => i.Category)
+            .Include(i => i.ReporterUser)
+            .Include(i => i.Comments)
             .ThenInclude(c => c.AuthorUser)
-        .AsNoTracking()
-        .ToListAsync();
+            .AsNoTracking()
+            .ToListAsync();
     }
 
     public async Task UpdateAsync(Incident incident, CancellationToken ct = default)

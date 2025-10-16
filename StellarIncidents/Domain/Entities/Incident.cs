@@ -11,7 +11,7 @@ public class Incident
     public IncidentStatus Status { get; set; } = IncidentStatus.Open;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-    
+
     public Category Category { get; set; } = null!;
     public User ReporterUser { get; set; } = null!;
     public User? AssignedToUser { get; set; }

@@ -1,11 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Net;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using StellarIncidents.Application.Dtos;
 using StellarIncidents.Domain.Entities;
 using StellarIncidents.Domain.Interfaces;
 using StellarIncidents.SwaggerExamples;
 using Swashbuckle.AspNetCore.Filters;
-using System.Net;
 
 namespace StellarIncidents.Controllers;
 
@@ -13,8 +13,8 @@ namespace StellarIncidents.Controllers;
 [ApiController]
 public class IncidentsController : ControllerBase
 {
-    private readonly IIncidentRepository _repository;
     private readonly IMapper _mapper;
+    private readonly IIncidentRepository _repository;
 
     public IncidentsController(IIncidentRepository repository, IMapper mapper)
     {

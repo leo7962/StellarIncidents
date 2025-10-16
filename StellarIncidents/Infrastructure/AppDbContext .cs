@@ -69,10 +69,18 @@ public class AppDbContext : DbContext
             .Property(u => u.Email)
             .IsRequired()
             .HasMaxLength(200);
-        
+
         modelBuilder.Entity<User>().HasData(
-             new User { Id = Guid.Parse("9d2ae144-8a49-4a44-aa4e-081c6526ab33"), FullName = "Leonardo Hernández", Email = "leonardo@example.com" },
-             new User { Id = Guid.Parse("adb396b6-416e-420e-8b37-46a2c07f8e93"), FullName = "Admin Soporte", Email = "soporte@example.com" }
-         );
+            new User
+            {
+                Id = Guid.Parse("9d2ae144-8a49-4a44-aa4e-081c6526ab33"), FullName = "Leonardo Hernández",
+                Email = "leonardo@example.com"
+            },
+            new User
+            {
+                Id = Guid.Parse("adb396b6-416e-420e-8b37-46a2c07f8e93"), FullName = "Admin Soporte",
+                Email = "soporte@example.com"
+            }
+        );
     }
 }
